@@ -1,9 +1,14 @@
-from scipy.spatial.distance import euclidean
-from scipy.spatial import distance
 import numpy as np
 import pandas as pd
+from scipy.spatial import distance
 
 
+def printarray(array):
+    for z in array:
+        print(z)
+
+def take2nd(e):
+    return e[1]
 
 class knn:
 
@@ -16,8 +21,8 @@ class knn:
            distances = []
            for j in self.list:
                 distances.append((j,distance.euclidean(i[0:4], j[0:4])))
-       print(distances)
-
+       distances.sort(key=take2nd)
+       printarray(distances)
     def score(self, list):
         result = 0.0
         return result
@@ -26,6 +31,6 @@ class knn:
 
 arraytest = np.array(pd.read_csv('../resources/test_data.csv', sep=',', header=None))
 arraylearn = np.array(pd.read_csv('../resources/learn_data.csv', sep=',', header=None))
-kn = knn(arraytest,5)
-kn.predict(arraylearn)
+kn = knn(arraylearn,5)
+kn.predict(arraytest)
 #print(kn.list)
