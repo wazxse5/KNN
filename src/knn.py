@@ -27,9 +27,8 @@ class Knn:
     def score(self, list_to_classify, labels):
         good = 0
         wrong = 0
-        predicted_labels = self.predict(list_to_classify)
-        for i in range(len(predicted_labels)):
-            if predicted_labels[i] == labels[i]:
+        for i in range(len(labels)):
+            if list_to_classify[i][4] == labels[i]:
                 good += 1
             else:
                 wrong += 1
