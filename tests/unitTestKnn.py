@@ -19,9 +19,11 @@ class TestKnn(unittest.TestCase):
     def testScore(self):
         print("     testScore")
         tab = ['Iris-setosa', 'Iris-setosa', 'Iris-setosa', 'Iris-versicolor']
-        tab2 = [[5.1,3.5,1.4,0.2,'Iris-setosa'],[4.9,3.0,1.4,0.2,'Iris-setosa'],[6.5,2.8,4.6,1.5,'Iris-versicolor'],[5.7,2.8,4.5,1.3,'Iris-versicolor']]
-        knn = src.knn.Knn(tab,3)
-        self.assertEqual(knn.score(tab2,tab),0.75)
+        tab2 = [[5.1, 3.5, 1.4, 0.2, 'Iris-setosa'], [4.9, 3.0, 1.4, 0.2, 'Iris-setosa'],
+                [6.5, 2.8, 4.6, 1.5, 'Iris-versicolor'], [5.7, 2.8, 4.5, 1.3, 'Iris-versicolor']]
+        knn = src.knn.Knn(tab, 3)
+        self.assertEqual(knn.score(tab2, tab), 0.75)
+
 
 if __name__ == '__main__':
     unittest.main()
