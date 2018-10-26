@@ -23,9 +23,5 @@ class TestKnn(unittest.TestCase):
         knn = src.knn.Knn(tab,3)
         self.assertEqual(knn.score(tab2,tab),0.75)
 
-
-
-
-
 if __name__ == '__main__':
     unittest.main()
