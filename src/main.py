@@ -8,6 +8,6 @@ array_learn = np.array(pd.read_csv('resources/learn_data.csv', sep=',', header=N
 
 kn = Knn(array_learn, 2)
 sc = kn.predict(remove_labels_from(array_test))
-
+print(sc)
 wsp = kn.score(remove_labels_from(array_test), remove_data_from(array_test))
 print(wsp)
